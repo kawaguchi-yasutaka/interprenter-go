@@ -11,7 +11,7 @@ func TestLetStatements(t *testing.T) {
 	input := `
 let x = 5;
 let y = 10;
-let foobar = 12222222;'
+let foobar = 12222222;
 `
 	l := lexer.New(input)
 	parser := New(l)
@@ -75,6 +75,33 @@ func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
 	}
 
 	return true
+}
+
+func TestReturnStatements(t *testing.T) {
+	input := `
+return 1;
+return 10;
+return 993322;
+`
+
+	l := lexer.New(input)
+	parser := New(l)
+	program := parser.ParseProgram()
+	checkParsErrors(t, &parser)
+
+	if len(program.Statements) != 3 {
+		t.Fatalf("program.Statements does not contain 3 statemsns, got=%d", len(program.Statements))
+	}
+
+	for _, statement := range program.Statements {
+		returnStatement, ok := statement.(*ast.ReturnStatementNode)
+		if !ok {
+			t.Errorf("s not *ast.ReturnStatementNode got=%T", returnStatement)
+		}
+		if returnStatement.Token.Type != token.RETURN {
+			t.Errorf("returnStatement.Token.Type not '%s' got=%s", token.RETURN, returnStatement.Token.Type)
+		}
+	}
 }
 
 func checkParsErrors(t *testing.T, parse *Parser) {

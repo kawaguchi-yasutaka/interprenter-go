@@ -42,3 +42,14 @@ func (i Identifier) ExpressionNode() {}
 type Program struct {
 	Statements []Statement
 }
+
+type ReturnStatementNode struct {
+	Token       token.Token
+	ReturnValue Expression
+}
+
+func (rs ReturnStatementNode) TokenLiteral() string {
+	return rs.TokenLiteral()
+}
+
+func (rs ReturnStatementNode) StatementNode() {}
