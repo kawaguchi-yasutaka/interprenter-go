@@ -129,3 +129,22 @@ func (il IntegerLiteral) ExpressionNode() {}
 func (il IntegerLiteral) String() string {
 	return il.TokenLiteral()
 }
+
+type PrefixExpression struct {
+	Token    token.Token
+	Operator string
+	Right    Expression
+}
+
+func (pe PrefixExpression) TokenLiteral() string {
+	return pe.Token.Literal
+}
+
+func (pe PrefixExpression) ExpressionNode() {}
+
+func (pe PrefixExpression) String() string {
+	if pe.Right != nil {
+		return pe.Operator + pe.Right.String()
+	}
+	return ""
+}
