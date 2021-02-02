@@ -207,7 +207,7 @@ func TestParsePrefixExpressions(t *testing.T) {
 		}
 
 		if exp.Operator != tt.operator {
-
+			fmt.Errorf("exp.Operator is not %s, got=%s", exp.Operator, tt.operator)
 		}
 		if !testIntegerLiteral(t, exp.Right, tt.integerValue) {
 			return

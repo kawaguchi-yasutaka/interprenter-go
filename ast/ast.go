@@ -142,9 +142,10 @@ func (pe PrefixExpression) TokenLiteral() string {
 
 func (pe PrefixExpression) ExpressionNode() {}
 
+//本の中ではbytes.bufferにwriteStringで書き込んでいる
 func (pe PrefixExpression) String() string {
 	if pe.Right != nil {
-		return pe.Operator + pe.Right.String()
+		return "(" + pe.Operator + pe.Right.String() + ")"
 	}
 	return ""
 }
