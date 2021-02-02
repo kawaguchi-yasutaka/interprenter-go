@@ -17,7 +17,7 @@ let foobar = 12222222;
 	l := lexer.New(input)
 	parser := New(l)
 	program := parser.ParseProgram()
-	checkParsErrors(t, &parser)
+	checkParsErrors(t, parser)
 
 	if program == nil {
 		t.Fatal("ParseProgram() return nil")
@@ -88,7 +88,7 @@ return 993322;
 	l := lexer.New(input)
 	parser := New(l)
 	program := parser.ParseProgram()
-	checkParsErrors(t, &parser)
+	checkParsErrors(t, parser)
 
 	if len(program.Statements) != 3 {
 		t.Fatalf("program.Statements does not contain 3 statemsns, got=%d", len(program.Statements))
@@ -124,7 +124,7 @@ func TestParseExpressionStatement(t *testing.T) {
 	l := lexer.New(input)
 	parser := New(l)
 	program := parser.ParseProgram()
-	checkParsErrors(t, &parser)
+	checkParsErrors(t, parser)
 
 	if len(program.Statements) != 1 {
 		t.Fatalf("program.Statements does not contain 1 statemsns, got=%d", len(program.Statements))
@@ -153,7 +153,7 @@ func TestParseIntegerLiteralExpression(t *testing.T) {
 	l := lexer.New(input)
 	parser := New(l)
 	program := parser.ParseProgram()
-	checkParsErrors(t, &parser)
+	checkParsErrors(t, parser)
 
 	if len(program.Statements) != 1 {
 		t.Fatalf("program.Statements does not contain 1 statemsns, got=%d", len(program.Statements))
@@ -190,7 +190,7 @@ func TestParsePrefixExpressions(t *testing.T) {
 		l := lexer.New(tt.input)
 		parser := New(l)
 		program := parser.ParseProgram()
-		checkParsErrors(t, &parser)
+		checkParsErrors(t, parser)
 
 		if len(program.Statements) != 1 {
 			t.Fatalf("program.Statements does not contain 1 statemsns, got=%d", len(program.Statements))
@@ -234,4 +234,55 @@ func testIntegerLiteral(t *testing.T, il ast.Expression, value int64) bool {
 		return false
 	}
 	return true
+}
+
+func TestParseInfixExpressions(t *testing.T) {
+	infixTests := []struct {
+		input      string
+		leftValue  int64
+		operator   string
+		rightValue int64
+	}{
+		{input: "5 + 5", leftValue: 5, operator: "+", rightValue: 5},
+		{input: "5 - 5", leftValue: 5, operator: "-", rightValue: 5},
+		{input: "5 * 5", leftValue: 5, operator: "*", rightValue: 5},
+		{input: "5 / 5", leftValue: 5, operator: "/", rightValue: 5},
+		{input: "5 > 5", leftValue: 5, operator: ">", rightValue: 5},
+		{input: "5 < 5", leftValue: 5, operator: "<", rightValue: 5},
+		{input: "5 == 5", leftValue: 5, operator: "==", rightValue: 5},
+		{input: "5 != 5", leftValue: 5, operator: "!=", rightValue: 5},
+	}
+
+	for _, tt := range infixTests {
+		l := lexer.New(tt.input)
+		parser := New(l)
+		program := parser.ParseProgram()
+		checkParsErrors(t, parser)
+
+		if len(program.Statements) != 1 {
+			t.Fatalf("program.Statements does not contain 1 statemsns, got=%d", len(program.Statements))
+		}
+
+		stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+		if !ok {
+			t.Fatalf("program statemens[0] is not ast.ExpressionStatement got=%T", program.Statements[0])
+		}
+
+		exp, ok := stmt.Expression.(*ast.InfixExpression)
+		if !ok {
+			t.Fatalf("exp not *ast.PrefixExpression, got=%T", stmt.Expression)
+		}
+
+		if !testIntegerLiteral(t, exp.Left, tt.leftValue) {
+			return
+		}
+		if exp.Operator != tt.operator {
+			fmt.Errorf("exp.Operator is not %s, got=%s", exp.Operator, tt.operator)
+		}
+		if !testIntegerLiteral(t, exp.Right, tt.rightValue) {
+			return
+		}
+
+	}
+
 }

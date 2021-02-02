@@ -149,3 +149,24 @@ func (pe PrefixExpression) String() string {
 	}
 	return ""
 }
+
+type InfixExpression struct {
+	Token    token.Token
+	Left     Expression
+	Operator string
+	Right    Expression
+}
+
+func (pe InfixExpression) TokenLiteral() string {
+	return pe.Token.Literal
+}
+
+func (pe InfixExpression) ExpressionNode() {}
+
+//本の中ではbytes.bufferにwriteStringで書き込んでいる
+func (pe InfixExpression) String() string {
+	if pe.Right != nil {
+		return "(" + pe.Left.String() + pe.Operator + pe.Right.String() + ")"
+	}
+	return ""
+}
