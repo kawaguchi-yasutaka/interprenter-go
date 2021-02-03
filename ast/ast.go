@@ -166,7 +166,7 @@ func (pe InfixExpression) ExpressionNode() {}
 //本の中ではbytes.bufferにwriteStringで書き込んでいる
 func (pe InfixExpression) String() string {
 	if pe.Right != nil {
-		return "(" + pe.Left.String() + pe.Operator + pe.Right.String() + ")"
+		return "(" + pe.Left.String() + " " + pe.Operator + " " + pe.Right.String() + ")"
 	}
 	return ""
 }
