@@ -170,3 +170,18 @@ func (pe InfixExpression) String() string {
 	}
 	return ""
 }
+
+type Boolean struct {
+	Token token.Token
+	Value bool
+}
+
+func (b Boolean) TokenLiteral() string {
+	return b.Token.Literal
+}
+
+func (b Boolean) ExpressionNode() {}
+
+func (b Boolean) String() string {
+	return b.TokenLiteral()
+}
