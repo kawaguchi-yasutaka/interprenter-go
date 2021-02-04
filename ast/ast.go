@@ -20,6 +20,7 @@ type Expression interface {
 	ExpressionNode()
 }
 
+//let <Identifier> = <expression>;
 type LetStatementNode struct {
 	Token token.Token
 	Name  *Identifier
@@ -73,6 +74,7 @@ func (p Program) String() string {
 	return out.String()
 }
 
+//return <expression>;
 type ReturnStatementNode struct {
 	Token       token.Token
 	ReturnValue Expression
@@ -97,6 +99,7 @@ func (rs ReturnStatementNode) String() string {
 	return out.String()
 }
 
+//<Expression>;
 type ExpressionStatement struct {
 	Token      token.Token
 	Expression Expression
@@ -130,6 +133,7 @@ func (il IntegerLiteral) String() string {
 	return il.TokenLiteral()
 }
 
+//<prefix operator> <Expression>;
 type PrefixExpression struct {
 	Token    token.Token
 	Operator string
@@ -150,6 +154,7 @@ func (pe PrefixExpression) String() string {
 	return ""
 }
 
+//<expression> <infix operator> <expression>;
 type InfixExpression struct {
 	Token    token.Token
 	Left     Expression
