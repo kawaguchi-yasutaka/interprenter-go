@@ -165,7 +165,7 @@ func TestParseBooleanExpresion(t *testing.T) {
 		t.Fatalf("program statemens[0] is not ast.ExpressionStatement got=%T", program.Statements[0])
 	}
 
-	if !testBoolenaExpression(t, stmt.Expression, true) {
+	if !testBooleanExpression(t, stmt.Expression, true) {
 		return
 	}
 }
@@ -317,6 +317,22 @@ func TestOperatorPrecedencesParsing(t *testing.T) {
 			input:    "3 > 5 == true",
 			expected: "((3 > 5) == true)",
 		},
+		{
+			input:    "1 + (2 + 3) + 4",
+			expected: "((1 + (2 + 3)) + 4)",
+		},
+		{
+			input:    "(5 + 5) * 2",
+			expected: "((5 + 5) * 2)",
+		},
+		{
+			input:    "-(5 + 5)",
+			expected: "(-(5 + 5))",
+		},
+		{
+			input:    "!(true == true)",
+			expected: "(!(true == true))",
+		},
 	}
 
 	for _, tt := range tests {
@@ -381,7 +397,7 @@ func testIdentifierLiteral(t *testing.T, il ast.Expression, value string) bool {
 	return true
 }
 
-func testBoolenaExpression(t *testing.T, il ast.Expression, value bool) bool {
+func testBooleanExpression(t *testing.T, il ast.Expression, value bool) bool {
 	boolean, ok := il.(*ast.Boolean)
 	if !ok {
 		t.Fatalf("exp not *ast.Identifier, got=%T", il)
@@ -407,7 +423,7 @@ func testLiteralExpresion(t *testing.T, exp ast.Expression, expected interface{}
 	case string:
 		testIdentifierLiteral(t, exp, v)
 	case bool:
-		testBoolenaExpression(t, exp, v)
+		testBooleanExpression(t, exp, v)
 	default:
 		t.Errorf("type of exp not handled got=%T", exp)
 	}

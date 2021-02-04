@@ -54,6 +54,7 @@ func New(lexer lexer.Lexer) *Parser {
 	p.registerPrefix(token.MINUS, p.parsePrefixExpression)
 	p.registerPrefix(token.TRUE, p.parseBoolean)
 	p.registerPrefix(token.FALSE, p.parseBoolean)
+	p.registerPrefix(token.LPAREN, p.parseGroupedExpression)
 
 	p.registerInfix(token.EQ, p.parseInfixExpression)
 	p.registerInfix(token.NOT_EQ, p.parseInfixExpression)
@@ -175,6 +176,26 @@ func (p *Parser) parseInfixExpression(left ast.Expression) ast.Expression {
 	p.nextToken()
 	expression.Right = p.parseExpression(precedence)
 	return &expression
+}
+
+func (p *Parser) parseGroupedExpression() ast.Expression {
+	p.nextToken()
+	//優先度（右結合力（先の演算子・オペランドが現在の式と結合する））を下げて、左結合すること避けている  1 * (2 + 3)
+	//1 * (1 + 2)
+	//parseGroupedExpressionが呼ばれている前のprecedenceはPRODUCT
+	//PRODUCT(右結合力) < SUM（左結合力）の比較がLOWEST（右結合力） < SUM（左結合力）の比較になる。
+	//ast.InfixExpression{
+	//		Token:    token.ASTERISK,
+	//		Operator: *,
+	//		Left:     1 ,
+	//	}
+	//のRIGHTに、2でなくて(2 + 3)が来る？
+	exp := p.parseExpression(LOWEST)
+
+	if !p.expectPeek(token.RPAREN) {
+		return nil
+	}
+	return exp
 }
 
 func (p *Parser) noPrefixParseFnError(t token.TokenType) {
