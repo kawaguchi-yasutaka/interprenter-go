@@ -56,6 +56,7 @@ func New(lexer lexer.Lexer) *Parser {
 	p.registerPrefix(token.FALSE, p.parseBoolean)
 	p.registerPrefix(token.LPAREN, p.parseGroupedExpression)
 	p.registerPrefix(token.IF, p.parseIfExpression)
+	p.registerPrefix(token.FUNCTION, p.parseFunctionLiteral)
 
 	p.registerInfix(token.EQ, p.parseInfixExpression)
 	p.registerInfix(token.NOT_EQ, p.parseInfixExpression)
@@ -275,6 +276,7 @@ func (p *Parser) parseBlockStatement() *ast.BlockStatement {
 	p.nextToken()
 
 	//EOFは、無限ループしないように
+	//閉じタグ見ていないから、チェック甘いかも？
 	for !p.curTokenIs(token.RBRACE) && !p.curTokenIs(token.EOF) {
 		stmt := p.ParseStatement()
 		if stmt != nil {
@@ -283,6 +285,53 @@ func (p *Parser) parseBlockStatement() *ast.BlockStatement {
 		p.nextToken()
 	}
 	return &block
+}
+
+func (p *Parser) parseFunctionLiteral() ast.Expression {
+	log.Println("pparseFunctionLiteral!!!!")
+	expression := ast.FunctionLiteral{
+		Token: p.curToken,
+	}
+
+	if !p.expectPeek(token.LPAREN) {
+		return nil
+	}
+
+	expression.Parameters = p.parseFunctionParameters()
+
+	if !p.expectPeek(token.LBRACE) {
+		return nil
+	}
+
+	expression.Body = p.parseBlockStatement()
+
+	return &expression
+}
+
+func (p *Parser) parseFunctionParameters() []*ast.Identifier {
+	identifieres := []*ast.Identifier{}
+
+	if p.peekTokenIs(token.RPAREN) {
+		p.nextToken()
+		return identifieres
+	}
+
+	p.nextToken()
+
+	//次がtoken.Identifierのチェックが甘いかも？
+	identifieres = append(identifieres, &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal})
+
+	for p.peekTokenIs(token.COMMA) {
+		p.nextToken()
+		p.nextToken()
+		identifieres = append(identifieres, &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal})
+	}
+
+	if !p.expectPeek(token.RPAREN) {
+		return nil
+	}
+
+	return identifieres
 }
 
 func (p *Parser) expectPeek(t token.TokenType) bool {
@@ -296,7 +345,7 @@ func (p *Parser) expectPeek(t token.TokenType) bool {
 }
 
 func (p *Parser) peekError(t token.TokenType) {
-	msg := fmt.Sprintf("expected next oken to b %s,got %s", t, p.peekToken.Type)
+	msg := fmt.Sprintf("expected next token %s,got %s", t, p.peekToken.Type)
 	p.errors = append(p.errors, msg)
 }
 

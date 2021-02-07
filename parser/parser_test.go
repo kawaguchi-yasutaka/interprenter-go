@@ -347,6 +347,100 @@ func TestIfElseExpression(t *testing.T) {
 
 }
 
+func TestFunctionLiteral(t *testing.T) {
+	input := "fn(x, y) {x + y};"
+	l := lexer.New(input)
+	parser := New(l)
+	program := parser.ParseProgram()
+	checkParsErrors(t, parser)
+
+	if len(program.Statements) != 1 {
+		t.Fatalf("program.Statements does not contain 1 statemsns, got=%d", len(program.Statements))
+	}
+
+	stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+	if !ok {
+		t.Fatalf("program statemens[0] is not ast.ExpressionStatement got=%T", program.Statements[0])
+	}
+	funcLiteral, ok := stmt.Expression.(*ast.FunctionLiteral)
+
+	if !ok {
+		t.Fatalf("stmt.Expression is not *ast.FunctionLiteral got=%T", stmt.Expression)
+	}
+
+	if len(funcLiteral.Parameters) != 2 {
+		t.Fatalf("exp.Parameters does not contain 2 statemsns, got=%d", len(funcLiteral.Parameters))
+	}
+
+	if !testIdentifierLiteral(t, funcLiteral.Parameters[0], "x") {
+		return
+	}
+
+	if !testIdentifierLiteral(t, funcLiteral.Parameters[1], "y") {
+		return
+	}
+
+	if len(funcLiteral.Body.Statements) != 1 {
+		t.Fatalf("funcLiteral.Body.Statements does not contain 2 statemsns, got=%d", len(funcLiteral.Parameters))
+	}
+
+	blockStatement, ok := funcLiteral.Body.Statements[0].(*ast.ExpressionStatement)
+	if !ok {
+		t.Fatalf(" exp.Body.Statements[0] is not *ast.ExpressionStatement got=%T", funcLiteral.Body.Statements[0])
+	}
+
+	if !testInfixExpression(t, blockStatement.Expression, "x", "+", "y") {
+		return
+	}
+
+}
+
+func TestFunctionParameters(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected []string
+	}{
+		{
+			input:    "fn() { 1 };",
+			expected: []string{},
+		},
+		{
+			input:    "fn(x) {x};",
+			expected: []string{"x"},
+		},
+		{
+			input:    "fn(x,y) {x + y};",
+			expected: []string{"x", "y"},
+		},
+	}
+
+	for _, tt := range tests {
+		l := lexer.New(tt.input)
+		parser := New(l)
+		program := parser.ParseProgram()
+		checkParsErrors(t, parser)
+
+		stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+		if !ok {
+			t.Fatalf("program statemens[0] is not ast.ExpressionStatement got=%T", program.Statements[0])
+		}
+		funcLiteral, ok := stmt.Expression.(*ast.FunctionLiteral)
+
+		if !ok {
+			t.Fatalf("stmt.Expression is not *ast.FunctionLiteral got=%T", stmt.Expression)
+		}
+
+		if len(funcLiteral.Parameters) != len(tt.expected) {
+			t.Fatalf("funcLiteral.Parameters does not contain %d statemsns, got=%d", len(tt.expected), len(funcLiteral.Parameters))
+		}
+
+		for i, s := range tt.expected {
+			testLiteralExpresion(t, funcLiteral.Parameters[i], s)
+		}
+
+	}
+
+}
 func TestOperatorPrecedencesParsing(t *testing.T) {
 	tests := []struct {
 		input    string
