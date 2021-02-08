@@ -288,7 +288,6 @@ func (p *Parser) parseBlockStatement() *ast.BlockStatement {
 }
 
 func (p *Parser) parseFunctionLiteral() ast.Expression {
-	log.Println("pparseFunctionLiteral!!!!")
 	expression := ast.FunctionLiteral{
 		Token: p.curToken,
 	}
