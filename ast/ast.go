@@ -70,7 +70,9 @@ func (p Program) String() string {
 	var out bytes.Buffer
 
 	for _, statement := range p.Statements {
-		out.WriteString(statement.String())
+		if statement != nil {
+			out.WriteString(statement.String())
+		}
 	}
 	return out.String()
 }
