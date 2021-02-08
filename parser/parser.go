@@ -118,8 +118,11 @@ func (p *Parser) parseLetStatement() *ast.LetStatementNode {
 		return nil
 	}
 
-	//式に対応したら変更
-	for !p.curTokenIs(token.SEMICOLON) {
+	p.nextToken()
+
+	letSmt.Value = p.parseExpression(LOWEST)
+
+	if p.peekTokenIs(token.SEMICOLON) {
 		p.nextToken()
 	}
 
@@ -130,7 +133,11 @@ func (p *Parser) parseReturnStatement() *ast.ReturnStatementNode {
 	returnSmt := &ast.ReturnStatementNode{}
 	returnSmt.Token = p.curToken
 
-	for !p.curTokenIs(token.SEMICOLON) {
+	p.nextToken()
+
+	returnSmt.ReturnValue = p.parseExpression(LOWEST)
+
+	for p.peekTokenIs(token.SEMICOLON) {
 		p.nextToken()
 	}
 
