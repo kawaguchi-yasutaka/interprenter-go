@@ -439,8 +439,37 @@ func TestFunctionParameters(t *testing.T) {
 		}
 
 	}
-
 }
+
+func TestCallFunctionParsing(t *testing.T) {
+	input := "add(1,2 * 3,4 + 5);"
+	l := lexer.New(input)
+	parser := New(l)
+	program := parser.ParseProgram()
+	checkParsErrors(t, parser)
+
+	stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+	if !ok {
+		t.Fatalf("program statemens[0] is not ast.ExpressionStatement got=%T", program.Statements[0])
+	}
+	callFunction, ok := stmt.Expression.(*ast.CallExpression)
+	if !ok {
+		t.Fatalf("stmt.Expression is not *ast.CallExpression got=%T", stmt.Expression)
+	}
+
+	if !testIdentifierLiteral(t, callFunction.Function, "add") {
+		return
+	}
+
+	if len(callFunction.Arguments) != 3 {
+		t.Fatalf("callFunction.Arguments does not contain 3 expressions, got=%d", len(callFunction.Arguments))
+	}
+
+	testLiteralExpresion(t, callFunction.Arguments[0], 1)
+	testInfixExpression(t, callFunction.Arguments[1], 2, "*", 3)
+	testInfixExpression(t, callFunction.Arguments[2], 4, "+", 5)
+}
+
 func TestOperatorPrecedencesParsing(t *testing.T) {
 	tests := []struct {
 		input    string
@@ -521,6 +550,18 @@ func TestOperatorPrecedencesParsing(t *testing.T) {
 		{
 			input:    "!(true == true)",
 			expected: "(!(true == true))",
+		},
+		{
+			input:    "a + add(b * c) + d",
+			expected: "((a + add((b * c))) + d)",
+		},
+		{
+			input:    "add(a,b ,1,2 * 3,4 + 5,add(6,7 * 8))",
+			expected: "add(a, b, 1, (2 * 3), (4 + 5), add(6, (7 * 8)))",
+		},
+		{
+			input:    "add(a + b + c * d /f + g)",
+			expected: "add((((a + b) + ((c * d) / f)) + g))",
 		},
 	}
 
