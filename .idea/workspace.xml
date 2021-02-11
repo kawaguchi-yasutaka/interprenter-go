@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/parser/parser.go" description="&#9;prefixParseFn func() ast.Expression&#10;&#9;infixParseFn..." line="148" />
-    <bookmark url="file://$PROJECT_DIR$/parser/parser.go" line="129" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/parser/parser.go" description="&#9;prefixParseFn func() ast.Expression&#10;&#9;infixParseFn..." line="155" />
+    <bookmark url="file://$PROJECT_DIR$/parser/parser.go" line="132" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9ff3161-78b5-412b-8bf8-b98ad2349888" name="Default Changelist" comment="feat(): return文をparseできるように">
+      <change afterPath="$PROJECT_DIR$/object/object.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ast/ast.go" beforeDir="false" afterPath="$PROJECT_DIR$/ast/ast.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/parser.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/parser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/parser_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser/parser_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,31 +15,52 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/interpreter_go$TestFunctionLiteral_in_interpreter_go_parser.out" NAME="TestFunctionLiteral in interpreter-go/parser Coverage Results" MODIFIED="1612717453727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/token/token.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/repl/repl.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="207">
+              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/object/object.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.goenv/versions/1.13.0/src/io/io.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser/parser.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="259" column="56" selection-start-line="259" selection-start-column="56" selection-end-line="259" selection-end-column="56" />
+            <state relative-caret-position="1258">
+              <caret line="80" column="25" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="27" />
               <folding>
                 <element signature="e#16#114#0" expanded="true" />
               </folding>
@@ -50,19 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.goenv/versions/1.13.0/src/strconv/atoi.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2958">
-              <caret line="174" selection-start-line="174" selection-end-line="174" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="958">
-              <caret line="341" column="8" selection-start-line="341" selection-start-column="4" selection-end-line="341" selection-end-column="8" />
+            <state relative-caret-position="1870">
+              <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -70,20 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ast/ast.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="222" column="5" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
-              <folding>
-                <element signature="e#13#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lexer/lexer.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="71" column="31" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="42" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -132,17 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EOF</find>
-      <find>NOT_EQ</find>
-      <find>ParseProgram</find>
-      <find>testLetStatement</find>
-      <find>peekChar</find>
-      <find>Program</find>
-      <find>Expression</find>
-      <find>ExpressionNode</find>
-      <find>prefixParseFn</find>
-      <find>ParseStatement</find>
-      <find>errors</find>
       <find>peekError</find>
       <find>parsePrefixExpression</find>
       <find>parseExpressionStatement</find>
@@ -152,7 +139,6 @@
       <find>checkParsErrors</find>
       <find>testIntegerLiteral</find>
       <find>TRUE</find>
-      <find>parseIdentifier</find>
       <find>noPrefixParseFnError</find>
       <find>parseExpression</find>
       <find>testBoolenaExpression</find>
@@ -161,6 +147,19 @@
       <find>parseInfixExpression</find>
       <find>expectP</find>
       <find>testInfixExpression</find>
+      <find>xpected next oke</find>
+      <find>expectPeek</find>
+      <find>parseIdentifier</find>
+      <find>FUNCTION</find>
+      <find>expected next token to</find>
+      <find>parseBlockStatement</find>
+      <find>,</find>
+      <find>LPAREN</find>
+      <find>log</find>
+      <find>write</find>
+      <find>identi</find>
+      <find>let</find>
+      <find>GenerateOtaId</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="$USER_HOME$/.goenv/versions/1.13.0" />
@@ -177,21 +176,22 @@
         <option value="$PROJECT_DIR$/lexer/lexer_testr.go" />
         <option value="$PROJECT_DIR$/lexer/lexer_test.go" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/repl/repl.go" />
         <option value="$PROJECT_DIR$/lexer/lexer.go" />
         <option value="$PROJECT_DIR$/ast/ast_test.go" />
         <option value="$PROJECT_DIR$/token/token.go" />
-        <option value="$PROJECT_DIR$/ast/ast.go" />
-        <option value="$PROJECT_DIR$/parser/parser.go" />
         <option value="$PROJECT_DIR$/parser/parser_test.go" />
+        <option value="$PROJECT_DIR$/parser/parser.go" />
+        <option value="$PROJECT_DIR$/ast/ast.go" />
+        <option value="$PROJECT_DIR$/repl/repl.go" />
+        <option value="$PROJECT_DIR$/object/object.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1826" />
-    <option name="y" value="-157" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="-1423" />
+    <option name="y" value="-72" />
+    <option name="width" value="1440" />
+    <option name="height" value="808" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -206,26 +206,6 @@
             <path>
               <item name="interpreter-go" type="b2602c69:ProjectViewProjectNode" />
               <item name="interpreter-go" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="interpreter-go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="interpreter-go" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="interpreter-go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="interpreter-go" type="462c0819:PsiDirectoryNode" />
-              <item name="lexer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="interpreter-go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="interpreter-go" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="interpreter-go" type="b2602c69:ProjectViewProjectNode" />
-              <item name="interpreter-go" type="462c0819:PsiDirectoryNode" />
-              <item name="repl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="interpreter-go" type="b2602c69:ProjectViewProjectNode" />
@@ -252,7 +232,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -266,8 +246,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestIfElseExpression in interpreter-go/parser">
-    <configuration name="TestIfElseExpression in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestReturnStatements in interpreter-go/parser">
+    <configuration name="TestCallFunctionParsing in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="interpreter-go" />
       <working_directory value="$PROJECT_DIR$/parser" />
       <framework value="gotest" />
@@ -275,10 +255,10 @@
       <package value="interpreter-go/parser" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestIfElseExpression$" />
+      <pattern value="^TestCallFunctionParsing$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestIfExpression in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestFunctionParameters in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="interpreter-go" />
       <working_directory value="$PROJECT_DIR$/parser" />
       <framework value="gotest" />
@@ -286,7 +266,18 @@
       <package value="interpreter-go/parser" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestIfExpression$" />
+      <pattern value="^TestFunctionParameters$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestLetStatements in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="interpreter-go" />
+      <working_directory value="$PROJECT_DIR$/parser" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="interpreter-go/parser" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestLetStatements$" />
       <method v="2" />
     </configuration>
     <configuration name="TestOperatorPrecedencesParsing in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -300,7 +291,7 @@
       <pattern value="^TestOperatorPrecedencesParsing$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestParseInfixExpressions in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestReturnStatements in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="interpreter-go" />
       <working_directory value="$PROJECT_DIR$/parser" />
       <framework value="gotest" />
@@ -308,72 +299,92 @@
       <package value="interpreter-go/parser" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestParseInfixExpressions$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestParsePrefixExpressions in interpreter-go/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="interpreter-go" />
-      <working_directory value="$PROJECT_DIR$/parser" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="interpreter-go/parser" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestParsePrefixExpressions$" />
+      <pattern value="^TestReturnStatements$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestIfElseExpression in interpreter-go/parser" />
-        <item itemvalue="Go Test.TestIfExpression in interpreter-go/parser" />
+        <item itemvalue="Go Test.TestReturnStatements in interpreter-go/parser" />
+        <item itemvalue="Go Test.TestLetStatements in interpreter-go/parser" />
         <item itemvalue="Go Test.TestOperatorPrecedencesParsing in interpreter-go/parser" />
-        <item itemvalue="Go Test.TestParsePrefixExpressions in interpreter-go/parser" />
-        <item itemvalue="Go Test.TestParseInfixExpressions in interpreter-go/parser" />
+        <item itemvalue="Go Test.TestCallFunctionParsing in interpreter-go/parser" />
+        <item itemvalue="Go Test.TestFunctionParameters in interpreter-go/parser" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestOperatorPrecedencesParsing_in_interpreter-go_parser - 2021.02.04 at 00h 39m 22s.xml">
+    <history-entry file="TestOperatorPrecedencesParsing_in_interpreter-go_parser - 2021.02.08 at 18h 14m 27s.xml">
       <configuration name="TestOperatorPrecedencesParsing in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestParseInfixExpressions_in_interpreter-go_parser - 2021.02.04 at 00h 50m 33s.xml">
-      <configuration name="TestParseInfixExpressions in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestOperatorPrecedencesParsing_in_interpreter-go_parser - 2021.02.04 at 00h 52m 19s.xml">
+    <history-entry file="TestOperatorPrecedencesParsing_in_interpreter-go_parser - 2021.02.08 at 18h 14m 47s.xml">
       <configuration name="TestOperatorPrecedencesParsing in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestParsePrefixExpressions_in_interpreter-go_parser - 2021.02.04 at 00h 55m 30s.xml">
-      <configuration name="TestParsePrefixExpressions in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLetStatements_in_interpreter-go_parser - 2021.02.08 at 18h 35m 21s.xml">
+      <configuration name="TestLetStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestOperatorPrecedencesParsing_in_interpreter-go_parser - 2021.02.05 at 01h 16m 28s.xml">
-      <configuration name="TestOperatorPrecedencesParsing in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestLetStatements_in_interpreter-go_parser - 2021.02.08 at 18h 37m 38s.xml">
+      <configuration name="TestLetStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIfExpression_in_interpreter-go_parser - 2021.02.06 at 01h 27m 54s.xml">
-      <configuration name="TestIfExpression in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestReturnStatements_in_interpreter-go_parser - 2021.02.08 at 18h 45m 16s.xml">
+      <configuration name="TestReturnStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIfExpression_in_interpreter-go_parser - 2021.02.06 at 01h 42m 40s.xml">
-      <configuration name="TestIfExpression in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestReturnStatements_in_interpreter-go_parser - 2021.02.08 at 18h 45m 22s.xml">
+      <configuration name="TestReturnStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIfExpression_in_interpreter-go_parser - 2021.02.06 at 01h 43m 18s.xml">
-      <configuration name="TestIfExpression in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestReturnStatements_in_interpreter-go_parser - 2021.02.08 at 18h 46m 51s.xml">
+      <configuration name="TestReturnStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIfExpression_in_interpreter-go_parser - 2021.02.06 at 01h 43m 59s.xml">
-      <configuration name="TestIfExpression in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestReturnStatements_in_interpreter-go_parser - 2021.02.08 at 18h 46m 59s.xml">
+      <configuration name="TestReturnStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestIfElseExpression_in_interpreter-go_parser - 2021.02.06 at 01h 54m 20s.xml">
-      <configuration name="TestIfElseExpression in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestReturnStatements_in_interpreter-go_parser - 2021.02.08 at 18h 47m 01s.xml">
+      <configuration name="TestReturnStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestReturnStatements_in_interpreter-go_parser - 2021.02.08 at 22h 57m 07s.xml">
+      <configuration name="TestReturnStatements in interpreter-go/parser" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-1826" y="-157" width="1920" height="1057" extended-state="0" />
+    <frame x="-1423" y="-72" width="1440" height="808" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14430244" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19670959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1626943" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7144402" weight="0.252386" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49918875" weight="0.057264052" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49966776" weight="0.32936978" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49966776" weight="0.32936978" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.7253219" visible="true" weight="0.3170391" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.2746781" side_tool="true" visible="true" weight="0.3170391" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.26825312" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13754153" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2294887" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -382,27 +393,6 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.21968912" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08626198" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2746114" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -424,7 +414,12 @@
     <MESSAGE value="test: テストを読みやすいように、ヘルパー関数追加" />
     <MESSAGE value="feat: 真偽値をパースできるように" />
     <MESSAGE value="feat: グループ化された式をパースできるように" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: グループ化された式をパースできるように" />
+    <MESSAGE value="feat: 関数リテラルをパースできるように" />
+    <MESSAGE value="fix: log削除" />
+    <MESSAGE value="feat:  関数を呼び出しparseできるように" />
+    <MESSAGE value="feat: 文でも式をparseできるように" />
+    <MESSAGE value="feat: replでparseできるように" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: replでparseできるように" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -445,7 +440,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser.go</url>
-          <line>148</line>
+          <line>155</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
@@ -455,39 +450,53 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
-          <line>238</line>
+          <line>258</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
-          <line>534</line>
+          <line>689</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
-          <line>119</line>
+          <line>139</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
-          <line>476</line>
+          <line>631</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
-          <line>150</line>
+          <line>170</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
-          <line>251</line>
+          <line>271</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/parser/parser.go</url>
-          <line>285</line>
-          <properties />
+          <line>292</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/parser/parser.go</url>
+          <line>254</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
+          <line>369</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/parser/parser_test.go</url>
+          <line>492</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -500,27 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/token/token.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repl/repl.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.goenv/versions/1.13.0/src/strconv/atoi.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2958">
@@ -530,8 +518,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lexer/lexer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="42" />
+        <state relative-caret-position="1190">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/token/token.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.goenv/versions/1.13.0/src/io/io.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/parser.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="80" column="25" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="27" />
+          <folding>
+            <element signature="e#16#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ast/ast.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -562,30 +595,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser/parser_test.go">
+    <entry file="file://$PROJECT_DIR$/repl/repl.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="958">
-          <caret line="341" column="8" selection-start-line="341" selection-start-column="4" selection-end-line="341" selection-end-column="8" />
+        <state relative-caret-position="207">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ast/ast.go">
+    <entry file="file://$PROJECT_DIR$/object/object.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="222" column="5" selection-start-line="222" selection-start-column="5" selection-end-line="222" selection-end-column="5" />
-          <folding>
-            <element signature="e#13#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parser/parser.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="259" column="56" selection-start-line="259" selection-start-column="56" selection-end-line="259" selection-end-column="56" />
-          <folding>
-            <element signature="e#16#114#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
         </state>
       </provider>
     </entry>
