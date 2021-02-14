@@ -81,7 +81,7 @@ func (p *Parser) ParseProgram() *ast.Program {
 	program := &ast.Program{}
 
 	for {
-		if p.peekToken.Type == token.EOF {
+		if p.curToken.Type == token.EOF {
 			break
 		}
 		statement := p.ParseStatement()

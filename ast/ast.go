@@ -77,6 +77,8 @@ func (p Program) String() string {
 	return out.String()
 }
 
+func (p Program) TokenLiteral() string { return "" }
+
 //return <expression>;
 type ReturnStatementNode struct {
 	Token       token.Token
