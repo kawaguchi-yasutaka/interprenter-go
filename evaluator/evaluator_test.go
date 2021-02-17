@@ -28,6 +28,30 @@ func TestEvalIntegerExpression(t *testing.T) {
 			input:    "-10",
 			expected: -10,
 		},
+		{
+			input:    "5 + 10",
+			expected: 15,
+		},
+		{
+			input:    "10 - 5",
+			expected: 5,
+		},
+		{
+			input:    "10 * 5",
+			expected: 50,
+		},
+		{
+			input:    "10 / 5",
+			expected: 2,
+		},
+		{
+			input:    "10 - 10",
+			expected: 0,
+		},
+		{
+			input:    "(10 - (10 - 4) * 1) / 2",
+			expected: 3,
+		},
 	}
 
 	for _, tt := range tests {
