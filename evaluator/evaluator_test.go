@@ -105,6 +105,26 @@ func TestEvaluateBooleanExpresion(t *testing.T) {
 			input:    "1 != 2",
 			expected: true,
 		},
+		{
+			input:    "true == true",
+			expected: true,
+		},
+		{
+			input:    "true == false",
+			expected: false,
+		},
+		{
+			input:    "true != true",
+			expected: false,
+		},
+		{
+			input:    "true != false",
+			expected: true,
+		},
+		{
+			input:    "(1 < 2) != false",
+			expected: true,
+		},
 	}
 
 	for _, tt := range tests {
